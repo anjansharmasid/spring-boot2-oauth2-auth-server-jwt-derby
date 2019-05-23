@@ -1,0 +1,31 @@
+server:
+  port: 9001
+  java:
+  version:  1.8
+logging:
+  level:
+     org:
+       springframework:
+        web:  DEBUG
+        hibernate:  DEBUG
+spring:
+  datasource:
+    url: jdbc:derby://localhost:1527/sample;create=false
+    username: anjan 
+    password: anjan123
+    driver-class-name: org.apache.derby.jdbc.ClientDriver
+    tomcat:
+      test-while-idle: true
+      validation-query: SELECT 1
+    initialization-mode: never
+    platform: derby
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.DerbyDialect
+    hibernate:
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+      ddl-auto: validate
+
+check-user-scopes: true
